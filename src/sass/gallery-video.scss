@@ -1,0 +1,116 @@
+.video-gallery {
+   &__slider {
+
+   }
+   &__wrapper {
+
+   }
+   &__slide {
+      position: relative!important;
+   }
+
+   &__video {
+      
+   }
+
+   &__controls {
+      display: flex;
+      position: absolute!important;
+      top: 20px;
+      left: 50px;
+      width: 100%;
+   }
+
+   &__buttons {
+      width: 60%;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+   }
+
+   &__playbtn {
+      cursor: pointer;
+      &::before {
+         content: url("../video/play.png");
+         background: $mainBlue;
+         padding: 14px 18px;
+         display: grid;
+         align-items: center;
+         border-radius: 50%;
+         transition: all 2s linear 3s;
+         animation: pulse 2s infinite ;
+      }
+     
+   }
+ 
+   &__mutebtn {
+      margin-right: 32px;
+      cursor: pointer;
+      &::before {
+          content: url("../video/volume.png");
+            
+      }
+    }
+   
+   &__fullscbtn {
+      cursor: pointer;
+      &::before {
+         content: url("../video/screen.png");
+           
+     }
+   }
+   
+}
+@keyframes pulse {
+   0% {
+      transform: scale(0.9);
+      box-shadow: 0 0 0 0 rgba(99, 152, 255, 0.7);
+   }
+   
+   70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 15px rgba(99, 152, 255, 0);
+   }
+
+   100% {
+      transform: scale(0.9);
+   }
+
+}
+
+@keyframes pulse2 {
+   0% {
+      transform: scale(0.9);
+      box-shadow: 0 0 0 0 rgba(25, 27, 31, 0.7);
+   }
+   
+   70% {
+      transform: scale(1);
+      box-shadow: 0 0 0 15px rgba(25, 27, 31, 0);
+   }
+
+   100% {
+      transform: scale(0.9);
+   }
+
+}
+.play::before {
+   content: url("../video/play.png");
+   background: $mainBlue;
+   padding: 14px 18px;
+   display: grid;
+   align-items: center;
+   border-radius: 50%;
+   animation: pulse 2s infinite ;
+   
+}
+.pause::before {
+   content: url("../video/pause.png");
+   background: $mainColor;
+   padding: 14px 20px;
+   display: grid;
+   align-items: center;
+   border-radius: 50%;
+   animation: pulse2 2s infinite ;
+
+}

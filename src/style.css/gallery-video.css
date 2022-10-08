@@ -1,0 +1,13 @@
+.video-gallery__slide {
+  position: relative !important;
+}
+.video-gallery__controls {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  position: absolute !important;
+  top: 150px;
+  left: 550px;
+  width: 100%;
+  background: rgba(118, 29, 29, 0.7);
+}

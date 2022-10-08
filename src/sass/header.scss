@@ -1,0 +1,107 @@
+.header {
+   &__hidden {
+      position: fixed;
+      width: 100%;
+      left: 0;
+      top: -100%;
+      background-color: rgba(0, 0, 0, 0.9);
+      transition: top .5s ease;
+      z-index: 10;
+   }
+   
+   
+   &__container {
+      display: flex;
+      justify-content: space-between;
+      padding: rem(15) 0;
+      
+   }
+  &__img {
+   width: 100px;
+   height: 60px;
+  }
+  .menu {
+   display: flex;
+
+   &__body {
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: rem(24);
+      
+   }
+   &__link {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      font-size: 14px;
+      color: $secondaryGrey;
+      transition: color .2s linear;
+      &:hover {
+         color: #fff;
+      }
+   }
+  
+  }
+  &__btn {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   
+ 
+  }
+  &__button {
+   border: 1.2px solid #fff;
+   border-radius: 40px;
+   padding: rem(14) rem(20);
+   color: $primaryWhite;
+   font-size: 14px;
+   transition: background .2s linear;
+   &:hover {
+      background: $mainBlue;
+   }
+   
+  }
+
+  &__visible {
+   padding-top: 25px;
+   
+   &-container {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      height: 107px;
+   }
+   &-body {
+      display: flex;
+      align-items: center;
+   }
+   &-social {
+      display: flex;
+      gap: rem(30);
+      margin-right: 70px;
+   }
+   &-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+   }
+   &-button {
+      border: 1.2px solid #fff;
+      border-radius: 40px;
+      padding: rem(18) rem(20);
+      color: $primaryWhite;
+      font-size: 14px;
+   }
+   &-img {
+      width: 120px;
+      height: 68px;
+   }
+  }
+  
+}
+.__show {
+   top: 0;
+}

@@ -1,0 +1,79 @@
+
+
+.image-gallery {
+   margin-bottom: 100px;
+   &__slider {
+      width: 100%;
+      height: 100%;
+      margin-left: auto;
+      margin-right: auto;
+      
+   }
+   
+  
+   &-scrollbar-drag {
+      background-color: aqua;
+   }
+
+   &__wrapper {
+      margin: 190px 0px;
+      display: grid!important;
+      grid-template-columns: repeat(8, auto)!important;
+      // gap: 180px;
+      
+   }
+   &__slide {
+      position: relative;
+      // margin-right: 150px;
+      margin-bottom: 180px;
+   }
+   
+   &__image {
+      width: 282px;
+      height: 389px;
+   }
+
+   &__after {
+      position: absolute!important;
+      top: 150px;
+      left: 180px;
+      z-index: 5;
+   }
+   
+   
+}
+
+.swiper-scrollbar-drag {
+   cursor: pointer;
+   background: url('../images/gallery/dragger.png')!important;
+   background-repeat: no-repeat!important;
+   background-size: 100% auto!important;
+   background-position: center!important;
+    &::after {
+       display: none!important;
+   }
+}
+
+
+
+.swiper-grid-column>.swiper-wrapper {
+   flex-direction: row!important;
+   
+}
+
+.swiper-grid>.swiper-wrapper {
+   flex-wrap: wrap;
+}
+
+.swiper-scrollbar {
+  
+}
+
+.swiper-scrollbar-horizontal {
+   
+   left: 1%;
+   bottom: 3px;
+   z-index: 50;
+   height: 5px;
+   width: 58%!important;
+}

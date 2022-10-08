@@ -1,0 +1,34 @@
+.main-block {
+   &__container {
+      display: flex;
+   }
+   &__text {
+      margin-top: 134px;
+   }
+   &__title {
+      
+      font-size: 81px;
+      letter-spacing: 20%;
+      line-height: math.div(97, 81);
+      margin-bottom: 50px;
+      
+   }
+   &__list {
+      margin-left: 10px;
+   }
+   &__item {
+      font-size: 18px;
+      line-height: math.div(34, 18);
+      list-style: disc;
+      &:not(:last-child) {
+         margin-bottom: 10px;
+      }
+   }
+   &__img {
+      margin-top: 70px;
+      
+   }
+   &__image {
+      
+   }
+}
