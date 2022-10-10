@@ -117,14 +117,19 @@
    }
    &__image {
       max-width: 100%;
+      border: 1px solid $mainBlue;
      
+   }
+   &__btn{
+      position: relative;
    }
    &__next {
       position: absolute!important;
       top: 272px!important;
       z-index: 9!important;
-      left: 141px!important;
-      background: url('../images/qualification/arrow.png');
+      left: 89px!important;
+      background: url('../images/qualification/right-ar.png');
+     
       background-color: $mainBlue;
       width: 89px!important;
       height: 70px!important;
@@ -140,8 +145,8 @@
       position: absolute!important;
       top: 272px!important;
       z-index: 9!important;
-      left: 10%!important;
-      background: url('../images/qualification/arrowl.png');
+      left: 0px!important;
+      background: url('../images/qualification/left-ar.png');
       background-repeat: no-repeat;
       background-size: 60% auto;
       background-position: center;

@@ -483,13 +483,17 @@ body {
 }
 .qualification-slider__image {
   max-width: 100%;
+  border: 1px solid #6398FF;
+}
+.qualification-slider__btn {
+  position: relative;
 }
 .qualification-slider__next {
   position: absolute !important;
   top: 272px !important;
   z-index: 9 !important;
-  left: 141px !important;
-  background: url("../images/qualification/arrow.png");
+  left: 89px !important;
+  background: url("../images/qualification/right-ar.png");
   background-color: #6398FF;
   width: 89px !important;
   height: 70px !important;
@@ -505,8 +509,8 @@ body {
   position: absolute !important;
   top: 272px !important;
   z-index: 9 !important;
-  left: 10% !important;
-  background: url("../images/qualification/arrowl.png");
+  left: 0px !important;
+  background: url("../images/qualification/left-ar.png");
   background-repeat: no-repeat;
   background-size: 60% auto;
   background-position: center;
@@ -533,29 +537,49 @@ body {
   margin-left: auto;
   margin-right: auto;
 }
-.image-gallery-scrollbar-drag {
-  background-color: aqua;
-}
 .image-gallery__wrapper {
   margin: 190px 0px;
   display: -ms-grid !important;
   display: grid !important;
-  -ms-grid-columns: (auto)[8] !important;
-  grid-template-columns: repeat(8, auto) !important;
+  -ms-grid-columns: (auto)[13] !important;
+  grid-template-columns: repeat(13, auto) !important;
 }
 .image-gallery__slide {
   position: relative;
+  margin-right: 150px !important;
   margin-bottom: 180px;
-}
-.image-gallery__image {
-  width: 282px;
-  height: 389px;
 }
 .image-gallery__after {
   position: absolute !important;
-  top: 150px;
-  left: 180px;
+  top: 185px;
+  left: 195px;
   z-index: 5;
+}
+.image-gallery__right {
+  position: absolute !important;
+  background: url("../images/gallery/gallery-image/u can press me.png");
+  left: 1096px !important;
+  top: 2px !important;
+  cursor: pointer !important;
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+.image-gallery__right::after {
+  display: none;
+}
+.image-gallery__left {
+  position: absolute !important;
+  top: 0px !important;
+  z-index: 9 !important;
+  left: 0px !important;
+  background: url("../images/gallery/gallery-image/u can press me.png");
+  background-repeat: no-repeat;
+  background-size: 100% auto;
+  background-position: center;
+}
+.image-gallery__left::after {
+  display: none;
 }
 
 .swiper-scrollbar-drag {
@@ -567,6 +591,14 @@ body {
 }
 .swiper-scrollbar-drag::after {
   display: none !important;
+}
+
+.swiper-scrollbar {
+  left: 50% !important;
+  top: 50% !important;
+  -webkit-transform: translate(-50%, -50%);
+          transform: translate(-50%, -50%);
+  background: #242424 !important;
 }
 
 .swiper-grid-column > .swiper-wrapper {
@@ -582,6 +614,7 @@ body {
 }
 
 .swiper-scrollbar-horizontal {
+  position: relative !important;
   left: 1%;
   bottom: 3px;
   z-index: 50;
@@ -589,6 +622,57 @@ body {
   width: 58% !important;
 }
 
+.more-image {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-bottom: 191px;
+}
+.more-image__text {
+  color: #424242;
+  margin-right: 15px;
+}
+.more-image__instagram {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background: #242424;
+  border-radius: 500px;
+  padding: 11px 10px;
+  position: relative;
+}
+.more-image__instagram::before {
+  content: url(../images/gallery/gallery-image/notice.png);
+  position: absolute;
+  left: -7px;
+  top: -13px;
+}
+.more-image__logo {
+  margin-right: 10px;
+}
+
+.scissors {
+  position: absolute;
+}
+
+.video-gallery {
+  margin-bottom: 150px;
+}
+.video-gallery__wrapper {
+  margin-bottom: 114px;
+}
 .video-gallery__slide {
   position: relative !important;
 }
@@ -744,6 +828,57 @@ body {
   border-radius: 50%;
   -webkit-animation: pulse2 2s infinite;
           animation: pulse2 2s infinite;
+}
+
+.review {
+  margin-bottom: 140px;
+}
+.review__profile {
+  margin-right: 10px;
+}
+.review__body {
+  display: -ms-grid;
+  display: grid;
+  -webkit-column-gap: 20px;
+     -moz-column-gap: 20px;
+          column-gap: 20px;
+  row-gap: 30px;
+  -ms-grid-columns: 1fr 20px 1fr;
+  grid-template-columns: repeat(2, 1fr);
+  grid-auto-rows: repeat(2, minmax(200px, auto));
+}
+.review__content {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+.review__comment {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  border: 2px solid #2b2b2b;
+  border-radius: 0px 15px 15px 15px;
+  padding: 30px;
+}
+.review__title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+.review__text {
+  font-size: 18px;
+  border-bottom: 2px solid #2b2b2b;
+  padding-bottom: 15px;
+  margin-bottom: 20px;
+}
+.review__feedback {
+  font-size: 14px;
+  text-transform: uppercase;
+  color: #d9d9d9;
+  margin-right: 15px;
 }
 
 .page_inner {

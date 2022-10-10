@@ -10,36 +10,68 @@
       
    }
    
-  
-   &-scrollbar-drag {
-      background-color: aqua;
-   }
 
    &__wrapper {
       margin: 190px 0px;
       display: grid!important;
-      grid-template-columns: repeat(8, auto)!important;
+      grid-template-columns: repeat(13, auto)!important;
       // gap: 180px;
       
    }
    &__slide {
       position: relative;
-      // margin-right: 150px;
+      margin-right: 150px!important;
       margin-bottom: 180px;
    }
    
    &__image {
-      width: 282px;
-      height: 389px;
+     
    }
 
    &__after {
       position: absolute!important;
-      top: 150px;
-      left: 180px;
+      top: 185px;
+      left: 195px;
       z-index: 5;
    }
-   
+
+   // &__btn {
+   //    width: 100%;
+   //    height: 100%;
+   //    display: flex;
+   //    align-items: center;
+   //    justify-content: center;
+   //   position: relative;
+   //    background-color: beige;
+   // }
+
+   &__right {
+      position: absolute!important;
+      background: url('../images/gallery/gallery-image/u\ can\ press\ me.png');
+      left: 1096px!important;
+      top: 2px!important;
+      cursor: pointer!important;
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center;
+      &::after {
+         display: none;
+      }
+      
+   }
+   &__left {
+      position: absolute!important;
+      top: 0px!important;
+      z-index: 9!important;
+      left: 0px!important;
+      background: url('../images/gallery/gallery-image/u\ can\ press\ me.png');
+      background-repeat: no-repeat;
+      background-size: 100% auto;
+      background-position: center;
+      &::after {
+         display: none;
+      }
+   }
    
 }
 
@@ -56,6 +88,13 @@
 
 
 
+.swiper-scrollbar {
+   left: 50%!important;
+   top: 50%!important;
+   transform: translate(-50%,-50%);
+   background: #242424!important;
+}
+
 .swiper-grid-column>.swiper-wrapper {
    flex-direction: row!important;
    
@@ -65,15 +104,45 @@
    flex-wrap: wrap;
 }
 
-.swiper-scrollbar {
-  
-}
 
 .swiper-scrollbar-horizontal {
-   
+   position: relative!important;
    left: 1%;
    bottom: 3px;
    z-index: 50;
    height: 5px;
    width: 58%!important;
+}
+
+.more-image {
+   display: flex;
+   align-items: center;
+   justify-content: center;
+   margin-bottom: 191px;
+   &__text {
+      color: #424242;
+      margin-right: 15px;
+   }
+   &__instagram {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background: #242424;
+      border-radius: 500px;
+      padding: 11px 10px;
+      position: relative;
+      &::before {
+         content: url(../images/gallery/gallery-image/notice.png);
+         position: absolute;
+         left: -7px;
+         top: -13px;
+      }
+   }
+   &__logo {
+      margin-right: 10px;
+   }
+}
+
+.scissors {
+   position: absolute;
 }

@@ -34,11 +34,14 @@ var swiper = new Swiper(".qualification-slider__swiper", {
 var swiper = new Swiper(".image-gallery__slider", {
   slidesPerView: 4,
   scrollbar: {
-    dragSize: 150,
+    dragSize: 200,
     el: '.swiper-scrollbar',
     draggable:true
   },
-
+  navigation: {
+    nextEl: ".image-gallery__right",
+    prevEl: ".image-gallery__left",
+  },
 });
 
 var swiper = new Swiper(".video-gallery__slider", {
