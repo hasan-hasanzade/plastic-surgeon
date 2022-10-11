@@ -93,3 +93,30 @@ fullscBtn.addEventListener('click', function() {
   }
 });
 
+
+function setupTabs() {
+  document.querySelectorAll(".services__designation").forEach(button => {
+    button.addEventListener('click', () => {
+      const sideBar = button.parentElement;
+      const tabsContainer = sideBar.parentElement;
+      const tabNumber = button.dataset.forTab;
+      const tabToActivate = tabsContainer.querySelector(`.services__operations[data-tab="${tabNumber}"]`)
+
+      sideBar.querySelectorAll(".services__designation").forEach(button =>{
+        button.classList.remove("services__designation-active");
+      });
+      tabsContainer.querySelectorAll(".services__operations").forEach(tab =>{
+        tab.classList.remove("services__operations-active");
+      });
+      button.classList.add("services__designation-active");
+      tabToActivate.classList.add("services__operations-active");
+    });
+  });
+}
+
+document.addEventListener("DOMContentLoaded", () => {
+  setupTabs();
+  document.querySelectorAll(".service__body").forEach(tabsContainer => {
+    tabsContainer.querySelector(".services__other .services__designation").click();
+  });
+});

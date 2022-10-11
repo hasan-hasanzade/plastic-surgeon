@@ -9,7 +9,8 @@
      column-gap: 20px;
      row-gap: 30px;
      grid-template-columns: repeat(2, 1fr);  
-     grid-auto-rows: repeat(2, minmax(200px, auto));  
+     grid-auto-rows: repeat(2, minmax(200px, auto)); 
+     align-items: start; 
    }
    &__content {
       display: flex;
@@ -19,18 +20,21 @@
       display: flex;
       flex-direction: column;
       border: 2px solid #2b2b2b;
-      border-radius: 0px 15px 15px 15px;
+      border-radius: 0px 50px 50px 50px;
       padding: 30px;
    }
    &__title {
+      font-weight: 700;
       font-size: 24px;
       margin-bottom: 20px;
+      line-height: math.div(29, 24);
    }
    &__text {
       font-size: 18px;
       border-bottom: 2px solid #2b2b2b;
-      padding-bottom: 15px;
+      padding-bottom: 20px;
       margin-bottom: 20px;
+      line-height: math.div(27, 18);
    }
    &__feedback {
       font-size: 14px;
