@@ -1389,6 +1389,18 @@ body {
   left: 0;
 }
 
+#map {
+  height: 1200px;
+}
+
+[class*=ymaps][class*=-ground-pane] {
+  filter: hue-rotate(45deg) invert(100%) grayscale(1);
+  -ms-filter: hue-rotate(45deg);
+  -webkit-filter: hue-rotate(170deg) invert(100%) grayscale(0.7);
+  -moz-filter: invert(70%);
+  -o-filter: invert(70%);
+}
+
 .page_inner {
   padding-top: 1.875rem;
 }
