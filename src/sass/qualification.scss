@@ -44,6 +44,9 @@
 .bottom-qualification {
    &__body {
       display: flex;
+      @media (max-width: em(1000)) {
+         flex-wrap: wrap;
+      }
    }
    &__associate {
       // margin-right: 92px;
@@ -103,6 +106,9 @@
       width: 520px;
    	height: 250px;
       background-color: #eaeaea;
+      @media (max-width: em(1000)) {
+         width: 920px;
+      }
       
    }
    &__slide {
@@ -113,7 +119,13 @@
       border-radius: 18px;
       font-size: 22px;
       font-weight: bold;
+      
+      
       color: #fff;
+      @media (max-width: em(1000)) {
+         width: 200px!important;
+         margin: 0!important;
+      }
    }
    &__image {
       max-width: 100%;
