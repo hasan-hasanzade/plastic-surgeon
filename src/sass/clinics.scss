@@ -2,6 +2,7 @@
    padding: 100px 0px;
    background: #fff;
    &__title {
+      text-align: center;
       font-size: 63px;
       font-weight: 700;
       line-height: math.div(76, 63);
@@ -9,9 +10,21 @@
       text-transform: uppercase;
       color: #eaeaea;
       margin-bottom: 50px;
+      @media (max-width: em(1215)) {
+         font-size: 54px;
+         ine-height: math.div(65, 54);
+         letter-spacing: 3px;
+      }
+      @media (max-width: em(1024)) {
+         font-size: 49px;
+         ine-height: math.div(59, 49);
+      }
    }
    &__body {
       display: flex;
+      @media (max-width: em(820)) {
+         flex-wrap: wrap;;
+      }
    }
    &__heading {
       font-size: 40px;
@@ -19,14 +32,47 @@
       line-height: math.div(48, 40);
       color: #151515;
       margin-bottom: 60px;
+      @media (max-width: em(1215)) {
+         font-size: 35px;
+         ine-height: math.div(40, 35);
+      }
+      @media (max-width: em(1024)) {
+         font-size: 30px;
+         ine-height: math.div(36, 30);
+      }
    }
    &__content {
+      @media (max-width: em(1215)) {
+         width: 600px;
+      }
+      @media (max-width: em(1024)) {
+         width: 500px;
+         &:not(:last-child) {
+            margin-right: 5px!important;
+         }
+      }
+      @media (max-width: em(820)) {
+        width: 100%;
+        &:not(:last-child) {
+         margin-bottom: 44px!important;
+      }
+      }
+     
       &:not(:last-child) {
          margin-right: 30px;
       }
    }
    &__padding{
       padding-bottom: 49px;
+      @media (max-width: em(1215)) {
+         padding-bottom: 40px;
+      }
+      @media (max-width: em(1024)) {
+         padding-bottom: 10px;
+      }
+      @media (max-width: em(820)) {
+         padding-bottom: 0px;
+      }
    }
    &__location {
       display: flex;
@@ -45,7 +91,17 @@
    &__slider {
       width: 594px;
       height: 430px!important;
-      // padding: 30px 0 70px 0!important;
+      @media (max-width: em(1215)) {
+          width: 100%;
+          height: 335px!important;
+          margin-left: 0!important;
+      }
+      @media (max-width: em(480)) {
+         height: 250px!important;
+      }
+      @media (max-width: em(370)) {
+         height: 200px!important;
+      }
    }
    &__slide {
       width: auto;
@@ -70,6 +126,14 @@
       position: relative;
       padding-bottom: 80%;
       cursor: pointer;
+      
+      @media (max-width: em(1215)) {
+         padding-bottom: 60%;
+         width: 81px;
+      }
+      @media (max-width: em(1024)) {
+         width: 61px;
+      }
       img{
          object-fit: cover;
          position: absolute;
@@ -112,9 +176,19 @@
 .iphk__slider {
    margin-right: 0!important;
    margin-left: 0!important;
-   width: 594px;
+   width: 594px!important;
    height: 430px!important;
-   // padding: 30px 0 70px 0!important;
+   @media (max-width: em(1215)) {
+      width: 100%!important;
+      height: 335px!important;
+  }
+  @media (max-width: em(480)) {
+   height: 250px!important;
+}
+@media (max-width: em(370)) {
+   height: 200px!important;
+}
+
 }
 .iphk__mini-slide {
       opacity: 0.2;
@@ -129,6 +203,14 @@
    position: relative;
    padding-bottom: 80%;
    cursor: pointer;
+   
+      @media (max-width: em(1215)) {
+         padding-bottom: 60%;
+         width: 81px;
+      }
+      @media (max-width: em(1024)) {
+         width: 61px;
+      }
    img{
       object-fit: cover;
       position: absolute;

@@ -1,5 +1,6 @@
 
 .about {
+   padding-bottom: 100px;
    background: $primaryWhite;
    &__halfimg {
       position: relative;
@@ -8,10 +9,24 @@
       position: absolute;
       left: 0px;
       top: -250px;
+      max-width: 100%;
+      width: 470px;
+      height: 385px;
+      object-fit: cover;
+      @media (max-width: ($mobile)) {
+         width: 728px;
+         height: 402px;
+         top: -50px;
+      }
+      @media (max-width: ($mobileSmall)) {
+         width: 440px;
+         height: 355px;
+      }
    }
    &__title {
       font-size: 81px;
       text-transform: uppercase;
+      font-weight: 700;
       color: transparent;
       -webkit-text-stroke: 3px $secondaryGrey;
       text-align: center;
@@ -21,11 +36,28 @@
       font-family: Arial, Helvetica, sans-serif;
       position: relative;
       z-index: 50;
+      @media (max-width: ($mobile)) {
+         font-size: 52px;
+         line-height: math.div(77, 64);
+         letter-spacing: 10px;
+         -webkit-text-stroke: 2px $secondaryGrey;
+      }
+      @media (max-width: ($mobileSmall)) {
+         font-size: 26px;
+         line-height: math.div(37, 26);
+         -webkit-text-stroke: 2px $secondaryGrey;
+      }
    }
    &__body {
       display: flex;
       color: $mainColor;
+      @media (max-width: ($mobile)) {
+         flex-wrap: wrap;
+      }
       
+   }
+   &__text {
+      margin-bottom: 60px;
    }
    &__subtitle {
       margin-bottom: 30px;
@@ -35,6 +67,7 @@
       letter-spacing: 2px;
    }
    &__description {
+      font-weight: 0;
       font-size: 20px;
       line-height: math.div(30, 20);
       &:not(:last-child) {
@@ -43,6 +76,34 @@
    }
    &__img {
       
+   }
+   &__image {
+
+      width: 386px;
+      height: 607px;
+      object-fit: cover;
+      object-position: 45% 100%;
+      @media (max-width: em($tablet)) {
+         max-width: 100%;
+         width: 450px;
+         object-position: 55% 100%;
+      }
+      @media (max-width: ($mobile)) {
+         width: 728px;
+         max-width: 100%;
+         
+      }
+      @media (max-width: ($mobileSmall)) {
+         max-width: 100%;
+         width: 440px;
+         object-position: 65% 100%;
+         
+      }
+      @media (max-width: em(380)) {
+         max-width: 100%;
+         object-fit: contain;
+         height: 100%;
+      }
    }
 }
 

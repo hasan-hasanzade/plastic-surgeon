@@ -19,29 +19,29 @@ ScrollOut({
 
 var swiper = new Swiper(".qualification-slider__swiper", {
   slidesPerView: 2.7,
-  // spaceBetween: 10,
+  spaceBetween: 10,
   freeMode: true,
   autoPlay: true,
   navigation: {
     nextEl: ".qualification-slider__next",
     prevEl: ".qualification-slider__prev",
   },
-  breakpoints: {
-    640: {
-      slidesPerView: 2,
+  // breakpoints: {
+  //   640: {
+  //     slidesPerView: 2,
       
-    },
-    768: {
-      width:768,
-      slidesPerView: 4,
+  //   },
+  //   768: {
+  //     width:768,
+  //     slidesPerView: 4,
       
-    },
-    1000: {
-      width:1000,
-      slidesPerView: 5,
+  //   },
+  //   1000: {
+  //     width:1000,
+  //     slidesPerView: 5,
       
-    },
-  },
+  //   },
+  // },
 });
 
 var swiper = new Swiper(".image-gallery__slider", {

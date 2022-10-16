@@ -13,6 +13,9 @@
             top: -15px;
          }
       }
+      @media (max-width: ($tablet)) {
+         flex-wrap: wrap;
+      }
       
    }
    &__item {

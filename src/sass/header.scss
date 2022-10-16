@@ -1,4 +1,8 @@
 .header {
+   margin-bottom: 134px;
+   @media (max-width: ($mobile)) {
+      margin-bottom: 75px;
+   }
    &__hidden {
       position: fixed;
       width: 100%;
@@ -74,14 +78,31 @@
       align-items: center;
       height: 107px;
    }
+   &-link {
+      @media (max-width: ($mobileSmall)) {
+         img {
+            width: 30px;
+         }
+      }
+      
+      
+   }
    &-body {
       display: flex;
       align-items: center;
+      @media (max-width: ($mobile)) {
+         flex-direction: column;
+      }
    }
    &-social {
       display: flex;
       gap: rem(30);
       margin-right: 70px;
+      @media (max-width: ($mobile)) {
+         gap: rem(15);
+         margin-right: 0px;
+         margin-bottom: 20px;
+      }
    }
    &-btn {
       display: flex;
@@ -94,10 +115,18 @@
       padding: rem(18) rem(20);
       color: $primaryWhite;
       font-size: 14px;
+      @media (max-width: ($mobileSmall)) {
+         font-size: 12px;
+         padding: rem(18) rem(15);
+      }
    }
    &-img {
       width: 120px;
       height: 68px;
+      @media (max-width: ($mobileSmall)) {
+         width: 95px;
+         height: 62px;
+      }
    }
   }
   

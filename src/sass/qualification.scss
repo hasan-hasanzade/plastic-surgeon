@@ -10,13 +10,21 @@
    }
    &__body {
       display: flex;
+      @media (max-width: ($mobileSmall)) {
+         flex-wrap: wrap;
+      }
+
    }
    &__content {
       background: $mainColor;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
+      // display: flex;
+      // flex-direction: column;
+      // justify-content: space-between;
       flex: 0 1 25%;
+      @media (max-width: ($mobileSmall)) {
+         flex-wrap: wrap;
+         flex: 0 1 50%;
+      }
       font-size: 14px;
       min-height: 340px;
       &:not(:last-child) {
@@ -34,7 +42,7 @@
       }
    }
    &__date{
-      font-size: 98px;
+      font-size: 18px;
       line-height: math.div(117, 98);
       margin-left: -20px;
       opacity: 5%;
@@ -49,8 +57,7 @@
       }
    }
    &__associate {
-      // margin-right: 92px;
-      
+
    }
    &__item {
       display: flex;
@@ -107,7 +114,8 @@
    	height: 250px;
       background-color: #eaeaea;
       @media (max-width: em(1000)) {
-         width: 920px;
+         width: 930px;
+         height: 450px;
       }
       
    }
@@ -116,20 +124,19 @@
       display: flex;
       align-items: center;
       justify-content: center;
-      border-radius: 18px;
-      font-size: 22px;
-      font-weight: bold;
-      
       
       color: #fff;
       @media (max-width: em(1000)) {
-         width: 200px!important;
+         width: 300px!important;
          margin: 0!important;
+         padding: 0px 0px!important;
+         margin-right: 50px!important;
+         
       }
    }
    &__image {
       max-width: 100%;
-      border: 1px solid $mainBlue;
+      border: 3px solid $mainBlue;
      
    }
    &__btn{
@@ -152,6 +159,12 @@
       &::after {
          display: none;
       }
+      @media (max-width: em(1000)) {
+         top: 472px!important;
+         z-index: 9!important;
+         left: 89px!important;
+      }
+
    }
    &__prev {
       position: absolute!important;
@@ -167,6 +180,11 @@
       height: 70px!important;
       &::after {
          display: none;
+      }
+      @media (max-width: em(1000)) {
+         top: 472px!important;
+         z-index: 9!important;
+         left: 0px!important;
       }
    }
 }

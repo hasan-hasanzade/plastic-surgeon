@@ -1,9 +1,17 @@
 .main-block {
    &__container {
       display: flex;
+      @media (max-width: ($mobile)) {
+         flex-wrap: wrap;
+      }
    }
    &__text {
-      margin-top: 134px;
+      @media (max-width: ($mobile)) {
+         display: flex;
+         flex-direction: column;
+         align-items: flex-start;
+      }
+      
    }
    &__title {
       
@@ -11,24 +19,52 @@
       letter-spacing: 20%;
       line-height: math.div(97, 81);
       margin-bottom: 50px;
+      @media (max-width: ($mobile)) {
+         font-size: 50px;
+         line-height: math.div(60, 50);
+         margin-bottom: 20px;
+      }
+      @media (max-width: ($mobileSmall)) {
+         font-size: 32px;
+      }
       
    }
    &__list {
       margin-left: 10px;
+
    }
+   
    &__item {
+      span {
+         font-size: 12px;
+      }
       font-size: 18px;
       line-height: math.div(34, 18);
       list-style: disc;
       &:not(:last-child) {
          margin-bottom: 10px;
       }
+      @media (max-width: ($mobileSmall)) {
+         font-size: 20px;
+         margin-left: 20px;
+         line-height: math.div(24, 18);
+      }
    }
    &__img {
-      margin-top: 70px;
+      @media (max-width: ($mobile)) {
+         display: flex;
+         justify-content: center;
+         align-items: center;
+         width: 100%;
+      }
+      
+      // margin-top: 70px;
       
    }
    &__image {
-      
+      @media (max-width: ($mobile)) {
+         width: 338px;
+         height: 704px; 
+      }
    }
 }
