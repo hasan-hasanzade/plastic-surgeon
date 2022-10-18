@@ -11,10 +11,26 @@
      grid-template-columns: repeat(2, 1fr);  
      grid-auto-rows: repeat(2, minmax(200px, auto)); 
      align-items: start; 
+     @media (max-width: ($mobile)) {
+      grid-template-columns: repeat(1, 1fr);  
+      align-items: center;
+      justify-content: center;
+     }
    }
    &__content {
       display: flex;
-      
+      @media (max-width: ($tablet)) {
+         flex-wrap: wrap;
+      }
+      @media (max-width: ($mobile)) {
+         justify-content: center;
+         align-items: center;
+      }
+   }
+   &__profile {
+      @media (max-width: ($tablet)) {
+         margin-bottom: 10px;
+      }
    }
    &__comment {
       display: flex;

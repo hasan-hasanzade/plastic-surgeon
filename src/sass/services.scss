@@ -11,10 +11,26 @@
       font-weight: 700;
       padding-top: 100px;
       padding-bottom: 40px;
+      text-align: center;
+      @media (max-width: ($tablet)) {
+         font-size: 50px;
+         line-height: math.div(62, 50);
+      }
+      @media (max-width: ($mobile)) {
+         font-size: 40px;
+         line-height: math.div(48, 40);
+      }
+      @media (max-width: ($mobileSmall)) {
+         font-size: 24px;
+         line-height: math.div(36, 24);
+      }
    }
    &__body {
       display: flex;
-      justify-content: space-around;
+      justify-content: space-between;
+      @media (max-width: ($mobile)) {
+         flex-wrap: wrap-reverse;
+      }
    }
    &__operations {
       margin-top: 30px;
@@ -27,10 +43,10 @@
       // }
    }
    &__operations-active {
-     display: block;
+      display: block;
       opacity: 1;
       visibility: visible;
-      animation: fade 1s ease-in-out;
+      animation: fade 2s ease-in-out;
       
    }
    &__operation {
@@ -39,6 +55,10 @@
       line-height: math.div(48, 40);
       letter-spacing: 2px;
       margin-bottom: 30px;
+      @media (max-width: ($mobileSmall)) {
+         font-size: 30px;
+         line-height: math.div(40, 30);
+      }
    }
    &__item {
       list-style: disc;
@@ -49,6 +69,11 @@
      
       &:not(:last-child){
          margin-bottom: 15px;
+      }
+      @media (max-width: ($mobileSmall)) {
+         font-size: 18px;
+         line-height: math.div(27, 18);
+         margin-left: 8px;
       }
    }
    &__other {
@@ -63,16 +88,27 @@
       line-height: math.div(24, 20);
       color: #c2c2c2;
       margin-bottom: 20px;
+      margin-right: 10px;
+      @media (max-width: ($mobileSmall)) {
+         font-size: 18px;
+         line-height: math.div(24, 18);
+      }
+
    }
    &__designation {
-     
+      width: 100%;
+      text-align: left;
       font-weight: 700;
-      font-size: 40px;
+      font-size: 30px;
       line-height: math.div(48, 40);
       letter-spacing: 2px;
       margin-bottom: 10px;
       border-bottom: 1px solid #c2c2c2;
-      padding: 15px 20px 15px 20px;
+      padding: 15px 0px 15px 0px;
+      @media (max-width: ($mobileSmall)) {
+         font-size: 21px;
+         line-height: math.div(30, 24);
+      }
       // &_active {
       //    background-color: $mainBlue;
       //    color: #fff;
@@ -80,11 +116,10 @@
       // }
    }
    &__designation-active {
-      transition: all .5s ease-in-out;
-      background-color: $mainBlue;
-      color: #fff;
-      border-left: 8px solid #000;
-      border-radius: 200px;
+      transition: all .3s ease-in;
+      // background-color: $mainBlue;
+      // color: #fff;
+      border-left: 3px solid #000;
    }
 }
 

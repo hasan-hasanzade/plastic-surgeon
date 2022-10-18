@@ -135,6 +135,15 @@ document.addEventListener("DOMContentLoaded", () => {
   });
 });
 
+const offerBtn = document.querySelector('.offer__close');
+
+offerBtn.addEventListener('click', (e) => {
+  e.preventDefault();
+
+  const popUp = document.querySelector('.offer__center');
+  popUp.classList.toggle("close-popup")
+})
+
 // "use strict"
 
 // document.addEventListener('DOMContentLoaded',function(){

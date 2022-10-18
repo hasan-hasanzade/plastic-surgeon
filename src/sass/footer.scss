@@ -22,6 +22,10 @@
       position: relative;
       display: flex;
       flex-direction: column;
+      @media (max-width: ($tablet)) {
+         // width: 295px;
+      }
+      
       
    }
    &__logo {
