@@ -4,7 +4,11 @@
 
 #map {
    height: 800px;
+   @media (max-width: ($mobile)) {
+      height: 673px;
+   }
 }
+
 
 [class*="ymaps"][class*="-ground-pane"] {
    filter: hue-rotate(45deg) invert(100%) grayscale(1);

@@ -3,7 +3,10 @@
    &__top {
       display: flex;
       justify-content: space-between;
-      padding-bottom: 60px;
+      padding-bottom: 10px;
+      @media (max-width: em(437)) {
+         padding-bottom: 0px;
+      }
       &:last-child .footer__link:last-child{
          position: relative;
          &::after {
@@ -13,8 +16,18 @@
             top: -15px;
          }
       }
+      
       @media (max-width: ($tablet)) {
          flex-wrap: wrap;
+      }
+      @media (max-width: em(832)) {
+         justify-content: space-evenly;
+      }
+      @media (max-width: em(645)) {
+         justify-content: space-between;
+      }
+      @media (max-width: em(437)) {
+         
       }
       
    }
@@ -23,10 +36,14 @@
       display: flex;
       flex-direction: column;
       @media (max-width: ($tablet)) {
-         // width: 295px;
+         margin-right: 15px;
+         margin-bottom: 50px;
       }
-      
-      
+      @media (max-width: em(437)) {
+         width: 250px;
+         margin-bottom: 35px;
+      }
+       
    }
    &__logo {
       width: 50px;
@@ -48,17 +65,31 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
+      @media (max-width: ($mobile)) {
+         flex-wrap: wrap;
+         align-items: center;
+         justify-content: center;
+         flex-direction: column;
+      }
    }
    &__copyrights {
       color: #c2c2c2;
       font-size: 14px;
       line-height: math.div(21, 14);
       font-weight: 500;
+      display: flex;
       letter-spacing: 1.5px;
       text-transform: uppercase;
+      @media (max-width: ($mobile)) {
+         font-size: 10px;
+         line-height: math.div(13, 10);
+         margin-bottom: 10px;
+         text-align: center;
+      }
    }
    &__warning {
       font-size: 12px;
+      
       line-height: math.div(16, 12);
       letter-spacing: 1.5px;
       font-weight: 500;
@@ -69,8 +100,24 @@
          left: -20px;
          top: 8px;
       }
+      @media (max-width: ($mobile)) {
+         font-size: 10px;
+         line-height: math.div(13, 10);
+         text-align: center;
+      }
    }
    &__middle-logo {
       width: 100px;
+   }
+}
+
+._flex3 {
+   order: 3;
+}
+
+@media (max-width: ($mobile)) {
+   ._ch2 {
+      order: -1;
+      margin-bottom: 10px;
    }
 }

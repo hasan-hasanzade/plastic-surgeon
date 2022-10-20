@@ -144,93 +144,96 @@ offerBtn.addEventListener('click', (e) => {
   popUp.classList.toggle("close-popup")
 })
 
-// "use strict"
+"use strict"
 
-// document.addEventListener('DOMContentLoaded',function(){
-//    const form = document.getElementById('form');
-//    form.addEventListener('submit',formSend);
+document.addEventListener('DOMContentLoaded',function(){
+   const form = document.getElementById('form');
+   form.addEventListener('submit',formSend);
 
-//    async function formSend(e) {
-//       e.preventDefault();
+   async function formSend(e) {
+      e.preventDefault();
 
-//       let error = formValidate(form);
+      let error = formValidate(form);
 
-//       const token = "5411923649:AAGu5tPox9Nc5aXzmywqqYTKuQIhkXamarU";
-//       const chatID = "-1001573570775";
-//       const urlApi = `https://api.telegram.org/bot${token}/sendMessage`;
+      const token = "5411923649:AAGu5tPox9Nc5aXzmywqqYTKuQIhkXamarU";
+      const chatID = "-1001573570775";
+      const urlApi = `https://api.telegram.org/bot${token}/sendMessage`;
 
-//       if (error === 0) {
+      if (error === 0) {
 
-//         let message = `<b>Заявка с сайта</b>\n`;
-//         message += `<b>Отправитель:</b> ${this.name.value}\n`;
-//         message += `<b>Номер:</b> ${this.phone.value}\n`;
-//         message += `<b>Текст:</b> ${this.msg.value}`;
+        let message = `<b>Заявка с сайта</b>\n`;
+        message += `<b>Отправитель:</b> ${this.name.value}\n`;
+        message += `<b>Номер:</b> ${this.phone.value}\n`;
+        message += `<b>Текст:</b> ${this.msg.value}\n`;
+        message += `<b>Консультация:</b> ${this.radio.value}`;
+        
 
-//         form.classList.add('_sending');
+        form.classList.add('_sending');
 
-//         axios.post(urlApi, {
-//          chat_id: chatID,
-//          parse_mode: 'html',
-//          text:message
-//         })
-//         .then((res)=>{
-//          this.name.value = "";
-//          this.phone.value = "";
-//          this.msg.value = "";
-//          form.classList.remove('_sending');
+        axios.post(urlApi, {
+         chat_id: chatID,
+         parse_mode: 'html',
+         text:message
+        })
+        .then((res)=>{
+         this.name.value = "";
+         this.phone.value = "";
+         this.msg.value = "";
+         this.radio.value = "";
+         form.classList.remove('_sending');
 
-//         })
-//         .catch((err)=> {
-//          Swal.fire({
-//             icon: 'error',
-//             title: 'Ошибка...',
-//             text: 'Что-то пошло не так'
-//           })
-//         })
-//         .finally(() => {
-//          Swal.fire({
-//             icon: 'success',
-//             title: 'Заявка отправлена',
-//             showConfirmButton: false,
-//             timer: 2500
-//           })
-//         })
+        })
+        .catch((err)=> {
+         Swal.fire({
+            icon: 'error',
+            title: 'Ошибка...',
+            text: 'Что-то пошло не так'
+          })
+        })
+        .finally(() => {
+         Swal.fire({
+            icon: 'success',
+            title: 'Заявка отправлена',
+            showConfirmButton: false,
+            timer: 2500
+          })
+        })
 
-//       }else {
-//          Swal.fire(
-//             'Ошибка',
-//             'Заполните обязательные поля',
-//             'error'
-//           );
-//       }
-//    }
+      }else {
+         Swal.fire(
+            'Ошибка',
+            'Заполните обязательные поля',
+            'error'
+          );
+      }
+   }
 
-//    function formValidate(form) {
-//       let error = 0;
-//       let formReq = document.querySelectorAll("._req");
+   function formValidate(form) {
+      let error = 0;
+      let formReq = document.querySelectorAll("._req");
 
-//       for (let index = 0; index < formReq.length; index++) {
-//          const input = formReq[index];
-//          formRemoveError(input);
+      for (let index = 0; index < formReq.length; index++) {
+         const input = formReq[index];
+         formRemoveError(input);
 
-//             if (input.value === '') {
-//                formAddError(input);
-//                error++;
-//             }
-//       }
-//       return error;
-//    }
+            if (input.value === '') {
+               formAddError(input);
+               error++;
+            }
+      }
+      return error;
+   }
 
-//    function formAddError(input) {
-//       input.parentElement.classList.add('_error');
-//       input.classList.add('_error');
-//    }
-//    function formRemoveError(input) {
-//       input.parentElement.classList.remove('_error');
-//       input.classList.remove('_error');
-//    }
+   function formAddError(input) {
+      input.parentElement.classList.add('_error');
+      input.classList.add('_error');
+   }
+   function formRemoveError(input) {
+      input.parentElement.classList.remove('_error');
+      input.classList.remove('_error');
+   }
 
-// });
+});
 
 var swiper = new Swiper(".clinics__slider", {
   navigation: {
@@ -334,3 +337,194 @@ ymaps.ready(function () {
   myMap.geoObjects.add(myPlacemarkWithContent2).add(myPlacemarkWithContent);
   
 });
+
+const menuLinks = document.querySelectorAll('.menu__link[data-goto]');
+
+if(menuLinks.length > 0) {
+  menuLinks.forEach(menuLink => {
+    menuLink.addEventListener('click', onMenuLinkClick);
+  });
+  function onMenuLinkClick(e) {
+    const menuLink = e.target;
+    if(menuLink.dataset.goto && document.querySelector(menuLink.dataset.goto)) {
+      const gotoBlock = document.querySelector(menuLink.dataset.goto);
+      const gotoBlockValue = gotoBlock.getBoundingClientRect().top + pageYOffset - document.querySelector('header').offsetHeight;
+
+      if(iconMenu.classList.contains('active')) {
+        document.body.classList.remove('lock');
+        iconMenu.classList.remove('active');
+        headerMenu.classList.remove('active');
+      }
+
+
+      window.scrollTo({
+        top: gotoBlockValue,
+        behavior: "smooth"
+      });
+      e.preventDefault();
+    }
+  }
+}
+
+
+
+"use strict";
+function DynamicAdapt(type) {
+	this.type = type;
+}
+DynamicAdapt.prototype.init = function () {
+	const _this = this;
+	// массив объектов
+	this.оbjects = [];
+	this.daClassname = "_dynamic_adapt_";
+	// массив DOM-элементов
+	this.nodes = document.querySelectorAll("[data-da]");
+	// наполнение оbjects объктами
+	for (let i = 0; i < this.nodes.length; i++) {
+		const node = this.nodes[i];
+		const data = node.dataset.da.trim();
+		const dataArray = data.split(",");
+		const оbject = {};
+		оbject.element = node;
+		оbject.parent = node.parentNode;
+		оbject.destination = document.querySelector(dataArray[0].trim());
+		оbject.breakpoint = dataArray[1] ? dataArray[1].trim() : "767";
+		оbject.place = dataArray[2] ? dataArray[2].trim() : "last";
+		оbject.index = this.indexInParent(оbject.parent, оbject.element);
+		this.оbjects.push(оbject);
+	}
+	this.arraySort(this.оbjects);
+	// массив уникальных медиа-запросов
+	this.mediaQueries = Array.prototype.map.call(this.оbjects, function (item) {
+		return '(' + this.type + "-width: " + item.breakpoint + "px)," + item.breakpoint;
+	}, this);
+	this.mediaQueries = Array.prototype.filter.call(this.mediaQueries, function (item, index, self) {
+		return Array.prototype.indexOf.call(self, item) === index;
+	});
+	// навешивание слушателя на медиа-запрос
+	// и вызов обработчика при первом запуске
+	for (let i = 0; i < this.mediaQueries.length; i++) {
+		const media = this.mediaQueries[i];
+		const mediaSplit = String.prototype.split.call(media, ',');
+		const matchMedia = window.matchMedia(mediaSplit[0]);
+		const mediaBreakpoint = mediaSplit[1];
+		// массив объектов с подходящим брейкпоинтом
+		const оbjectsFilter = Array.prototype.filter.call(this.оbjects, function (item) {
+			return item.breakpoint === mediaBreakpoint;
+		});
+		matchMedia.addListener(function () {
+			_this.mediaHandler(matchMedia, оbjectsFilter);
+		});
+		this.mediaHandler(matchMedia, оbjectsFilter);
+	}
+};
+DynamicAdapt.prototype.mediaHandler = function (matchMedia, оbjects) {
+	if (matchMedia.matches) {
+		for (let i = 0; i < оbjects.length; i++) {
+			const оbject = оbjects[i];
+			оbject.index = this.indexInParent(оbject.parent, оbject.element);
+			this.moveTo(оbject.place, оbject.element, оbject.destination);
+		}
+	} else {
+		//for (let i = 0; i < оbjects.length; i++) {
+		for (let i = оbjects.length - 1; i >= 0; i--) {
+			const оbject = оbjects[i];
+			if (оbject.element.classList.contains(this.daClassname)) {
+				this.moveBack(оbject.parent, оbject.element, оbject.index);
+			}
+		}
+	}
+};
+// Функция перемещения
+DynamicAdapt.prototype.moveTo = function (place, element, destination) {
+	element.classList.add(this.daClassname);
+	if (place === 'last' || place >= destination.children.length) {
+		destination.insertAdjacentElement('beforeend', element);
+		return;
+	}
+	if (place === 'first') {
+		destination.insertAdjacentElement('afterbegin', element);
+		return;
+	}
+	destination.children[place].insertAdjacentElement('beforebegin', element);
+}
+// Функция возврата
+DynamicAdapt.prototype.moveBack = function (parent, element, index) {
+	element.classList.remove(this.daClassname);
+	if (parent.children[index] !== undefined) {
+		parent.children[index].insertAdjacentElement('beforebegin', element);
+	} else {
+		parent.insertAdjacentElement('beforeend', element);
+	}
+}
+// Функция получения индекса внутри родителя
+DynamicAdapt.prototype.indexInParent = function (parent, element) {
+	const array = Array.prototype.slice.call(parent.children);
+	return Array.prototype.indexOf.call(array, element);
+};
+// Функция сортировки массива по breakpoint и place 
+// по возрастанию для this.type = min
+// по убыванию для this.type = max
+DynamicAdapt.prototype.arraySort = function (arr) {
+	if (this.type === "min") {
+		Array.prototype.sort.call(arr, function (a, b) {
+			if (a.breakpoint === b.breakpoint) {
+				if (a.place === b.place) {
+					return 0;
+				}
+
+				if (a.place === "first" || b.place === "last") {
+					return -1;
+				}
+
+				if (a.place === "last" || b.place === "first") {
+					return 1;
+				}
+
+				return a.place - b.place;
+			}
+
+			return a.breakpoint - b.breakpoint;
+		});
+	} else {
+		Array.prototype.sort.call(arr, function (a, b) {
+			if (a.breakpoint === b.breakpoint) {
+				if (a.place === b.place) {
+					return 0;
+				}
+
+				if (a.place === "first" || b.place === "last") {
+					return 1;
+				}
+
+				if (a.place === "last" || b.place === "first") {
+					return -1;
+				}
+
+				return b.place - a.place;
+			}
+
+			return b.breakpoint - a.breakpoint;
+		});
+		return;
+	}
+};
+const da = new DynamicAdapt("max");
+da.init();
+
+
+const iconMenu = document.querySelector('.header__icon');
+const headerMenu = document.querySelector('.header__menu');
+if (iconMenu) {
+  iconMenu.addEventListener('click', function(e) {
+    document.body.classList.toggle('lock');
+    iconMenu.classList.toggle('active');
+    headerMenu.classList.toggle('active');
+  });
+}
+
+
+var phoneMask = IMask(
+  document.getElementById('phone'), {
+    mask: '+{7}(000)000-00-00'
+  });
