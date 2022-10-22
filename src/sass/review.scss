@@ -44,6 +44,10 @@
       font-size: 24px;
       margin-bottom: 20px;
       line-height: math.div(29, 24);
+      @media (max-width: ($mobileSmall)) {
+         font-size: 18px;
+         line-height: math.div(22, 18);
+      }
    }
    &__text {
       font-size: 18px;
@@ -51,6 +55,10 @@
       padding-bottom: 20px;
       margin-bottom: 20px;
       line-height: math.div(27, 18);
+      @media (max-width: ($mobileSmall)) {
+         font-size: 14px;
+         line-height: math.div(21, 14);
+      }
    }
    &__feedback {
       font-size: 14px;

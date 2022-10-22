@@ -9,67 +9,44 @@
       margin-right: auto;
       
    }
+
+   @media (max-width:$mobile) {
+      &__image {
+         width: 150px;
+         height: 200px;
+      }
+      &__after {
+         img {
+            width: 150px;
+            height: 200px;
+         }
+      }
+   }
+
+  
    
 
    &__wrapper {
       margin: 190px 0px;
       display: grid!important;
       grid-template-columns: repeat(13, auto)!important;
-      // gap: 180px;
-      
+      column-gap: 120px;
    }
    &__slide {
       position: relative;
-      margin-right: 150px!important;
-      margin-bottom: 180px;
+      margin-right: 40px!important;
+      margin-bottom: 200px;
    }
    
-   &__image {
-     
-   }
 
    &__after {
       position: absolute!important;
       top: 185px;
       left: 195px;
       z-index: 5;
-   }
-
-   // &__btn {
-   //    width: 100%;
-   //    height: 100%;
-   //    display: flex;
-   //    align-items: center;
-   //    justify-content: center;
-   //   position: relative;
-   //    background-color: beige;
-   // }
-
-   &__right {
-      position: absolute!important;
-      background: url('../images/gallery/gallery-image/u\ can\ press\ me.png');
-      left: 1096px!important;
-      top: 2px!important;
-      cursor: pointer!important;
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: center;
-      &::after {
-         display: none;
-      }
-      
-   }
-   &__left {
-      position: absolute!important;
-      top: 0px!important;
-      z-index: 9!important;
-      left: 0px!important;
-      background: url('../images/gallery/gallery-image/u\ can\ press\ me.png');
-      background-repeat: no-repeat;
-      background-size: 100% auto;
-      background-position: center;
-      &::after {
-         display: none;
+      @media (max-width:$mobile) {
+         top: 105px;
+         left: 110px;
       }
    }
    
@@ -113,6 +90,7 @@
    height: 5px;
    width: 58%!important;
 }
+
 
 .more-image {
    display: flex;
