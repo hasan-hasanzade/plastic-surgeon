@@ -31,7 +31,7 @@
                      <li class="menu__item"><a data-goto=".page_section_6" href="#" class="menu__link">Карта</a></li>
                   </ul>
                </nav>
-               <div data-da=".header__menu, 767.98" class="header__btn"><a data-goto=".page_section_7" class="header__button" href="">Записаться на прием</a></div>
+               <div data-da=".header__menu, 767.98" class="header__btn"><a data-goto=".page_section_7" class="header__button menu__link" href="">Записаться на прием</a></div>
                <ul data-da=".header__menu, 767.98" class="menu__social">
                   <li class="menu__list"><a class="menu__blank" href=""><img src="./src/images/header-1/insta.svg" alt=""></a></li>
                   <li class="menu__list"><a class="menu_blank" href=""><img src="./src/images/header-1/vk.svg" alt=""></a></li>
@@ -53,7 +53,7 @@
                      <li class="header__visible-item"><a class="header__visible-link" href=""><img src="./src/images/header-1/whp.svg" alt=""></a></li>
                   </ul>
                   <div class="header__visible-btn">
-                     <a class="header__visible-button" href="">Записаться на прием</a>
+                     <a class="header__visible-button menu__link" data-goto=".page_section_7" href="#">Записаться на прием</a>
                   </div>
                </div>
             </div>
@@ -204,6 +204,9 @@
                        <div class="image-gallery__slide swiper-slide"><img class="image-gallery__image" src="./src/images/gallery/gallery-image/b/b13.png" alt=""><div class="image-gallery__after"><img src="./src/images/gallery/gallery-image/b/b14.png" alt=""></div></div>
                        <div class="image-gallery__slide swiper-slide"><img class="image-gallery__image" src="./src/images/gallery/gallery-image/d/d9.png" alt=""><div class="image-gallery__after"><img src="./src/images/gallery/gallery-image/d/d10.png" alt=""></div></div>
                        <div class="image-gallery__slide swiper-slide"><img class="image-gallery__image" src="./src/images/gallery/gallery-image/b/b17.png" alt=""><div class="image-gallery__after"><img src="./src/images/gallery/gallery-image/b/b18.png" alt=""></div></div>
+                       <div class="image-gallery__slide swiper-slide"><img class="image-gallery__image" src="./src/images/gallery/gallery-image/b/b17.png" alt=""><div class="image-gallery__after"><img src="./src/images/gallery/gallery-image/b/b18.png" alt=""></div></div>
+                       <div class="image-gallery__slide swiper-slide"><img class="image-gallery__image" src="./src/images/gallery/gallery-image/b/b17.png" alt=""><div class="image-gallery__after"><img src="./src/images/gallery/gallery-image/b/b18.png" alt=""></div></div>
+                       <div class="image-gallery__slide swiper-slide"><img class="image-gallery__image" src="./src/images/gallery/gallery-image/b/b17.png" alt=""><div class="image-gallery__after"><img src="./src/images/gallery/gallery-image/b/b18.png" alt=""></div></div>
                      </div>
                      <div class="swiper-scrollbar"></div>
                      
@@ -219,11 +222,11 @@
                      <span class="more-image__acc">rauf.yusifzade</span>
                   </a>
                </div>
-               <!-- <div class="gallery__video video-gallery">
+               <div class="gallery__video video-gallery">
                   <div class="video-gallery__slider swiper">
                      <div class="video-gallery__wrapper swiper-wrapper">
                         <div class="video-gallery__slide swiper-slide">
-                           <video class="video-gallery__video"  height="490px" width="490px" src="./src/video/1.m4v"></video>
+                           <video class="video-gallery__video" src="./src/video/1.m4v"></video>
                            <div class="video-gallery__controls">
                               <div class="video-gallery__buttons">
                                  <button class="video-gallery__playbtn"></button>
@@ -235,7 +238,7 @@
                            </div>
                         </div>
                         <div class="video-gallery__slide swiper-slide">
-                           <video class="video-gallery__video"  height="490px" width="490px" src="./src/video/2.m4v"></video>
+                           <video class="video-gallery__video" src="./src/video/2.m4v"></video>
                            <div class="video-gallery__controls">
                               <div class="video-gallery__buttons">
                                  <button class="video-gallery__playbtn"></button>
@@ -246,17 +249,94 @@
                               </div>
                            </div>
                         </div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/3.m4v"></video></div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/4.m4v"></video></div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/5.m4v"></video></div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/6.m4v"></video></div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/7.m4v"></video></div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/8.m4v"></video></div>
-                        <div class="video-gallery__slide swiper-slide"><video  height="490px" width="490px" src="./src/video/9.m4v"></video></div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/3.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/9.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/5.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/6.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/7.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/8.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
+                        <div class="video-gallery__slide swiper-slide">
+                           <video class="video-gallery__video" src="./src/video/4.m4v"></video>
+                           <div class="video-gallery__controls">
+                              <div class="video-gallery__buttons">
+                                 <button class="video-gallery__playbtn"></button>
+                                 <div class="video-gallery__btns">
+                                    <button class="video-gallery__mutebtn"></button>
+                                    <button class="video-gallery__fullscbtn"></button>
+                                 </div>
+                              </div>
+                           </div>
+                        </div>
                      </div>
                      <div class="swiper-scrollbar"></div>
                   </div>
-               </div> -->
+               </div>
                <div class="page__review review page_section_3">
                   <div class="review__container">
                      <div class="review__body">
@@ -266,7 +346,8 @@
                               <div class="review__top">
                                  <h3 class="review__title">Пациент +7-989-70XXXXX</h3>
                                  <p class="review__text">Все очень понравилось. Результатом довольна.<br>
-                                    Добрый день. Очень давно хотела сделать ринопластику. Была искривлена носовая перегородка. В последние пару лет постоянно использовала капли для носа, так как нос не дышал совсем. Было принятое решение сделать наконец-то операцию. Выбрала клинику. Меня принял Рауф Вугарович. Проконсультировал, объяснил все этапы операции и восстановления после неё. В этой же клинике обследовалась. Операция шла 4, 5 часа, потому что работы было очень много. Рауф Вугарович сделал мне прекрасный нос. После операции отношение было внимательное со стороны врача и медперсонала. Мне прописали лекарства, объяснили все, что можно и нельзя делать во время восстановления. Так же после операции приезжала на приёмы к Рауфу Вугаровичу, для оценки заживления носа. Подведу итоги: операцией я очень довольна. Прекрасный врач, знающий своё дело. Со спокойной душой советую Рауфа Вугаровича как пластического хирурга!</p>
+                                    Добрый день. Очень давно хотела сделать ринопластику. Была искривлена носовая перегородка. В последние пару лет постоянно использовала капли для носа, так как нос не дышал совсем. Было принятое решение сделать наконец-то операцию. Выбрала клинику. Меня принял Рауф Вугарович. Проконсультировал,<span id="dots">...</span><span class="review__more" id="more">объяснил все этапы операции и восстановления после неё. В этой же клинике обследовалась. Операция шла 4, 5 часа, потому что работы было очень много. Рауф Вугарович сделал мне прекрасный нос. После операции отношение было внимательное со стороны врача и медперсонала. Мне прописали лекарства, объяснили все, что можно и нельзя делать во время восстановления. Так же после операции приезжала на приёмы к Рауфу Вугаровичу, для оценки заживления носа. Подведу итоги: операцией я очень довольна. Прекрасный врач, знающий своё дело. Со спокойной душой советую Рауфа Вугаровича как пластического хирурга!</span></p>
+                                 <button class="review__btn">Подробнее</button>
                               </div>
                               <div class="review__bottom">
                                  <span class="review__feedback">Отзыв из:</span>
@@ -278,11 +359,9 @@
                            <div class="review__profile"><img src="./src/images/feedback/avatar.png" alt=""></div>
                            <div class="review__comment">
                               <div class="review__top">
-                                 <h3 class="review__title">Пациент +7-989-70XXXXX</h3>
-                                 <p class="review__text">Рауф Вугарович развеял все мои страхи и сомнения по поводу самой операции и дальнейшей реабилитации (столько страшилок я начиталась). Блестяще провел операцию риносептопластики, реабилитация тоже под его чутким руководством проходит легко. Он сам интересуется моим состоянием, на связи 24/7, ни один вопрос не остается без ответа, всегда очень внимателен. Результат отличный - я, наконец, дышу полной грудью, прошли головные боли и головокружение. Огромная благодарность молодому, талантливому хирургу, который так увлечен своей работой.
-                                    <br>
-
-                                    Много лет страдала затруднением носового дыхания, зависимостью от сосудосуживающих капель. Обращалась в разные клиники, диагностировали искривление носовой перегородки, предлагали оперировать, но из-за боязни операции и осложнений на операцию я никак не решалась, пока не попала на прием к молодому пластическому хирургу Юсифзаде Рауфу Вугаровичу. Он с первых минут внушил уверенность своим профессионализмом и внимательным отношением к пациенту.</p>
+                                 <p class="review__text">Все очень понравилось. Результатом довольна.<br>
+                                    Добрый день. Очень давно хотела сделать ринопластику. Была искривлена носовая перегородка. В последние пару лет постоянно использовала капли для носа, так как нос не дышал совсем. Было принятое решение сделать наконец-то операцию. Выбрала клинику. Меня принял Рауф Вугарович. Проконсультировал,<span id="dots">...</span><span class="review__more" id="more">объяснил все этапы операции и восстановления после неё. В этой же клинике обследовалась. Операция шла 4, 5 часа, потому что работы было очень много. Рауф Вугарович сделал мне прекрасный нос. После операции отношение было внимательное со стороны врача и медперсонала. Мне прописали лекарства, объяснили все, что можно и нельзя делать во время восстановления. Так же после операции приезжала на приёмы к Рауфу Вугаровичу, для оценки заживления носа. Подведу итоги: операцией я очень довольна. Прекрасный врач, знающий своё дело. Со спокойной душой советую Рауфа Вугаровича как пластического хирурга!</span></p>
+                                 <button class="review__btn">Подробнее</button>
                               </div>
                               <div class="review__bottom">
                                  <span class="review__feedback">Отзыв из:</span>
@@ -345,7 +424,7 @@
                   <li class="offer__item">Сутки нахождения в комфортабельном стационаре</li>
                   <li class="offer__item">Осмотры и перевязки в период реабилитации</li>
                </ul>
-               <div class="offer__btn">Записаться на бесплатную консультацию</div>
+               <a data-goto=".page_section_7" class="offer__btn menu__link">Записаться на бесплатную консультацию</a>
             </div>
             <div class="offer__bottom">
                <p class="offer__right-text">Безболезненная • минимум отеков • без синяков • без гематом</p>

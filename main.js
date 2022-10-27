@@ -18,7 +18,7 @@ ScrollOut({
 });
 
 var swiper = new Swiper(".qualification-slider__swiper", {
-  slidesPerView: 2.7,
+  slidesPerView: 2.5,
   spaceBetween: 10,
   freeMode: true,
   autoPlay: true,
@@ -26,114 +26,136 @@ var swiper = new Swiper(".qualification-slider__swiper", {
     nextEl: ".qualification-slider__next",
     prevEl: ".qualification-slider__prev",
   },
+  breakpoints: {
+    320: {
+      slidesPerView: 2.5,
+    },
+    378: {
+      slidesPerView: 2.5,
+    },
+    578: {
+      slidesPerView: 2.2,
+    },
+    768: {
+      slidesPerView: 3.8,
+    },
+    1000: {
+      slidesPerView: 4.5,
+    },
+    1200: {
+      slidesPerView: 2.7,
+    },
+  },
   
 });
 
 var swiper = new Swiper(".image-gallery__slider", {
   slidesPerView: 4,
   scrollbar: {
-    // dragSize: auto,
     el: ".swiper-scrollbar",
     draggable: true,
+    dragSize: 80,
   },
   navigation: {
     nextEl: ".image-gallery__right",
     prevEl: ".image-gallery__left",
   },
-  // breakpoints: {
-  //   450: {
-  //     slidesPerView: 1,
-      
-  //   },
-  //   780: {
-  //     slidesPerView: 2,
-      
-  //   },
-  //   890: {
-  //     slidesPerView: 3,
-  //     dragSize: 120
-      
-  //   },
-  //   1120: {
-  //     slidesPerView: 4,
-  //     dragSize: 160
-      
-  //   },
-  //   1340: {
-  //     slidesPerView: 5,
-      
-  //   },
-  //   1560: {
-  //     slidesPerView: 6,
-      
-  //   },
-  // },
+  breakpoints: {
+    1870: {
+      slidesPerView: 5,
+    },
+    
+  },
 });
 
 var swiper = new Swiper(".video-gallery__slider", {
-  slidesPerView: 3.5,
-  spaceBetween: 30,
+  
   scrollbar: {
-    dragSize: 200,
+    dragSize: 80,
     el: ".swiper-scrollbar",
     draggable: true,
   },
   breakpoints: {
-    450: {
+    340: {
       slidesPerView: 1,
-      
+      spaceBetween: 0,
     },
-    780: {
-      slidesPerView: 5,
-      
+    440: {
+      slidesPerView: 1.3,
+      spaceBetween: 20,
     },
-    890: {
-      slidesPerView: 3,
-      dragSize: 120,
-      
+    640: {
+      slidesPerView: 1.8,
+      spaceBetween: 20,
     },
-    1120: {
-      slidesPerView: 4,
-      dragSize: 160,
-      
+    768: {
+      slidesPerView: 2,
+      spaceBetween: 40,
     },
-    1340: {
-      slidesPerView: 5,
-      
+    868: {
+      slidesPerView: 2.2,
+      spaceBetween: 40,
     },
-    1560: {
-      slidesPerView: 6,
-      
+    1024: {
+      slidesPerView: 2,
+      spaceBetween: 30,
     },
+    1124: {
+      slidesPerView: 2.2,
+      spaceBetween: 30,
+    },
+    1510: {
+      slidesPerView: 2.5,
+      spaceBetween: 30,
+    },
+    1722: {
+      slidesPerView: 3.5,
+      spaceBetween: 30,
+    }
+    
   },
 });
 
-// const video = document.querySelector(".video-gallery__video");
-// const playBtn = document.querySelector(".video-gallery__playbtn");
-// const muteBtn = document.querySelector(".video-gallery__mutebtn");
-// const fullscBtn = document.querySelector(".video-gallery__fullscbtn");
 
-// function togglePlayPause() {
-//   if (video.paused) {
-//     playBtn.className = "pause";
-//     video.play();
-//   } else {
-//     playBtn.className = "play";
-//     video.pause();
-//   }
-// }
+onload = e => {
+  const containers = document.querySelectorAll('.video-gallery__slide');
+  containers.forEach(container => {
+    const video = container.querySelector('.video-gallery__video');
+    const playBtn = container.querySelector('.video-gallery__playbtn');
+    const muteBtn = container.querySelector('.video-gallery__mutebtn');
+    const fullscBtn = container.querySelector(".video-gallery__fullscbtn");
+    playBtn.addEventListener('click', e => {
+      if (video.paused) {
+            playBtn.className = "pause";
+           video.play();
+        } else {
+          playBtn.className = "play";
+          video.pause();
+         }
+    })
+    video.addEventListener("timeupdate", e => {
+      if (video.ended) {
+        playBtn.className = "play";
+      }
+    }) 
+    muteBtn.addEventListener('click', e => {
+      video.muted = !video.muted;
+    })
+    fullscBtn.addEventListener("click", e => {
+      if (video.requestFullscreen) {
+        video.requestFullscreen();
+      } else if (video.webkitRequestFullscreen) {
+        fullscBtn.webkitRequestFullscreen();
+      } else if (video.msRequestFullscreen) {
+        video.msRequestFullscreen();
+      }
+    });
+  })
+}
 
-// playBtn.addEventListener("click", togglePlayPause);
 
-// video.addEventListener("timeupdate", function () {
-//   if (video.ended) {
-//     playBtn.className = "play";
-//   }
-// });
 
-// muteBtn.addEventListener("click", function () {
-//   video.muted = true;
-// });
+
 
 // fullscBtn.addEventListener("click", function () {
 //   if (video.requestFullscreen) {
@@ -570,3 +592,31 @@ var phoneMask = IMask(
   document.getElementById('phone'), {
     mask: '+{7}(000)000-00-00'
   });
+
+
+
+
+// const btnMore = document.querySelector('.review__btn');
+
+// function readMore(){
+//     const dots = document.getElementById("dots");
+//     const more = document.getElementById("more");
+//     const text = document.querySelector('.review__text');
+    
+
+//     if(dots.style.display === "none") {
+//       dots.style.display = "inline"
+//       btnMore.innerHTML = "Подробнее"
+//       more.style.display = "none"
+//       text.classList.remove('collapsed')
+//     } else {
+//       dots.style.display = "none"
+//       btnMore.innerHTML = "Скрыть"
+//       more.style.display = "inline"
+//       text.classList.add('collapsed')
+//     }
+// }
+
+// btnMore.addEventListener('click',readMore)
+
+

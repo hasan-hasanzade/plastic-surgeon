@@ -36,7 +36,7 @@
    &__right-text {
       -webkit-animation: rmove 60s linear infinite; /* Safari 4.0 - 8.0 */
          white-space: nowrap;
-         animation: rmove 40s linear  infinite;
+         animation: rmove 60s linear  infinite 1s;
          font-size: 138px;
          font-weight: 700;
          color: transparent;
@@ -70,15 +70,13 @@
    &__left-text {
       -webkit-animation: lmove 60s linear infinite; /* Safari 4.0 - 8.0 */
          white-space: nowrap;
-         animation: lmove 40s linear  infinite;
+         animation: lmove 60s linear  infinite;
          font-size: 158px;
          font-weight: 700;
          color: transparent;
          -webkit-text-stroke: 3px $secondaryGrey;
          text-align: center;
-         // line-height: math.div(97.2, 81);
          letter-spacing: 35px;
-         // margin-bottom: 80px;
          font-family: Arial, Helvetica, sans-serif;
          position: relative;
          z-index: 0;
@@ -130,13 +128,24 @@
          scale: 0.4;
          top: 10%;
          left: 25%;
-         // width: 100%;
       }
       @media (max-width: em(500)) {
-         scale: 0.4;
          top: 10%;
          left: 25%;
-         @include adaptiveValue("left", 25%, 5%)
+         
+      }
+      @media (max-width: em(450)) {
+         top: 10%;
+         left: 20%;
+         
+      }
+      @media (max-width: em(400)) {
+         left: 14%;
+         top: 2%;
+      }
+      @media (max-width: em(350)) {
+         top: 1%;
+         left: 10%;
       }
    }
    &__title {
@@ -186,9 +195,9 @@
    &__list {
       margin-left: 30px;
       margin-bottom: 30px;
-      @media (max-width: em(455)) {
-         margin-bottom: 10px;
-      }
+      // @media (max-width: em(455)) {
+      //    margin-bottom: 15px;
+      // }
    }
    &__item {
       font-size: 16px;
@@ -210,7 +219,6 @@
       border-radius: 48px;
       color: $primaryWhite;
       font-size: 18px;
-      // line-height: math.div(22, 18);
       letter-spacing: 2%;
       font-weight: 500;
       cursor: pointer;

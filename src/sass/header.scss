@@ -24,8 +24,7 @@
          padding: rem(15) 0;
       }
      &__img {
-      width: 100px;
-      height: 60px;
+     
      }
      .menu {
       display: flex;
@@ -41,7 +40,7 @@
          align-items: center;
          gap: rem(24);
          @media (max-width: em(1052)) {
-            gap: rem(2);
+            gap: rem(8);
          }
          
       }
@@ -53,8 +52,18 @@
          font-size: 14px;
          color: $secondaryGrey;
          transition: color .2s linear;
+     
          &:hover {
             color: #fff;
+         }
+         @media (max-width: em(1052)) {
+            font-size: 14px;
+         }
+         @media (max-width: em(950)) {
+            font-size: 13px;
+         }
+         @media (max-width: em(896)) {
+            font-size: 12px;
          }
       }
      
@@ -76,7 +85,15 @@
       &:hover {
          background: $mainBlue;
       }
-      
+      @media (max-width: em(1052)) {
+         padding: rem(12) rem(10);
+         font-size: 12px;
+      }
+
+      @media (max-width: em(839)) {
+         padding: rem(12) rem(8);
+         font-size: 11px;
+      }
      
    }
   }
@@ -301,10 +318,10 @@
       border-radius: 40px;
       padding: rem(18) rem(20);
       color: $primaryWhite;
-      font-size: 14px;
+      font-size: 14px!important;
       @media (max-width: ($mobileSmall)) {
-         font-size: 12px;
-         padding: rem(18) rem(15);
+         font-size: 12px!important;
+         padding: rem(18) rem(12)!important;
       }
    }
    &-img {
