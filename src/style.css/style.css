@@ -1043,6 +1043,10 @@ a {
   opacity: 1 !important;
 }
 
+.fancybox__container {
+  max-width: 100% !important;
+}
+
 .image-gallery {
   margin-bottom: 100px;
 }
@@ -1615,10 +1619,25 @@ a {
   margin-bottom: 20px;
 }
 .review__btn {
+  padding: 5px;
+  margin-top: 10px;
   color: #6398FF;
+  cursor: pointer;
 }
-#more {
-  display: none;
+.review__more {
+  display: block;
+  visibility: hidden;
+  opacity: 0;
+  height: 0;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+}
+
+.review__more--open {
+  display: block;
+  opacity: 1;
+  height: 30rem;
+  visibility: visible;
 }
 
 .offer {
@@ -2088,7 +2107,7 @@ a {
 .services__designation-active {
   -webkit-transition: all 0.3s ease-in;
   transition: all 0.3s ease-in;
-  border-left: 3px solid #000;
+  color: #6398FF;
 }
 
 @-webkit-keyframes fade {

@@ -133,6 +133,21 @@ onload = e => {
           video.pause();
          }
     })
+    playBtn.forEach((e,index) => {
+      e.addEventListener('click',function(){
+        video[index].play();
+        stopVideo(index)
+      })
+    });
+
+    function stopVideo(id) {
+      video.forEach((e,index) => {
+        if(id !== index) {
+          video[index].pause();
+        }
+      })
+    }
+
     video.addEventListener("timeupdate", e => {
       if (video.ended) {
         playBtn.className = "play";
@@ -153,19 +168,6 @@ onload = e => {
   })
 }
 
-
-
-
-
-// fullscBtn.addEventListener("click", function () {
-//   if (video.requestFullscreen) {
-//     video.requestFullscreen();
-//   } else if (video.webkitRequestFullscreen) {
-//     fullscBtn.webkitRequestFullscreen();
-//   } else if (video.msRequestFullscreen) {
-//     video.msRequestFullscreen();
-//   }
-// });
 
 function setupTabs() {
   document.querySelectorAll(".services__designation").forEach((button) => {
@@ -248,7 +250,8 @@ document.addEventListener('DOMContentLoaded',function(){
          Swal.fire({
             icon: 'error',
             title: 'Ошибка...',
-            text: 'Что-то пошло не так'
+            text: 'Что-то пошло не так',
+            width: '22em',
           })
         })
         .finally(() => {
@@ -256,16 +259,26 @@ document.addEventListener('DOMContentLoaded',function(){
             icon: 'success',
             title: 'Заявка отправлена',
             showConfirmButton: false,
-            timer: 2500
+            timer: 2500,
+            width: '22em',
+            timerProgressBar: true,
+            color: '#fff',
+            confirmButtonColor: '#6398FF',
+            background: '#141414'
           })
         })
 
       }else {
-         Swal.fire(
-            'Ошибка',
-            'Заполните обязательные поля',
-            'error'
-          );
+         Swal.fire({
+            icon: 'error',
+            title: 'Ошибка...',
+            text: 'Заполните обязательные поля',
+            width: '22em',
+            color: '#fff',
+            confirmButtonColor: '#6398FF',
+            background: '#141414',
+            showCloseButton: true,
+         });
       }
    }
 
@@ -590,33 +603,30 @@ if (iconMenu) {
 
 var phoneMask = IMask(
   document.getElementById('phone'), {
-    mask: '+{7}(000)000-00-00'
-  });
+  mask: '+{7}(000)000-00-00'
+});
 
 
 
 
-// const btnMore = document.querySelector('.review__btn');
+const btn = document.querySelector(".review__btn");
 
-// function readMore(){
-//     const dots = document.getElementById("dots");
-//     const more = document.getElementById("more");
-//     const text = document.querySelector('.review__text');
-    
+const text = document.querySelector(".review__more");
 
-//     if(dots.style.display === "none") {
-//       dots.style.display = "inline"
-//       btnMore.innerHTML = "Подробнее"
-//       more.style.display = "none"
-//       text.classList.remove('collapsed')
-//     } else {
-//       dots.style.display = "none"
-//       btnMore.innerHTML = "Скрыть"
-//       more.style.display = "inline"
-//       text.classList.add('collapsed')
-//     }
-// }
+const cardHolder = document.querySelector('.review__body');
 
-// btnMore.addEventListener('click',readMore)
+cardHolder.addEventListener('click', e => {
 
+   const current = e.target;
 
+   const isReadMoreBtn = current.className.includes("review__btn");
+
+   if (!isReadMoreBtn)
+      return;
+
+   const  currentText = e.target.parentNode.querySelector(".review__more");
+
+   currentText.classList.toggle('review__more--open');
+
+   current.textContent = current.textContent.includes('Читать дальше') ? 'Скрыть' : 'Читать дальше';
+})

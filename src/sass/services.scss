@@ -37,10 +37,6 @@
       display: none;
       opacity: 0;
       visibility: 0;
- 
-      // &_active {
-         
-      // }
    }
    &__operations-active {
       display: block;
@@ -109,17 +105,10 @@
          font-size: 21px;
          line-height: math.div(30, 24);
       }
-      // &_active {
-      //    background-color: $mainBlue;
-      //    color: #fff;
-      //    border-left: 8px solid #000;
-      // }
    }
    &__designation-active {
       transition: all .3s ease-in;
-      // background-color: $mainBlue;
-      // color: #fff;
-      border-left: 3px solid #000;
+      color: $mainBlue;
    }
 }
 
