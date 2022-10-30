@@ -167,6 +167,9 @@
    align-items: center;
    justify-content: center;
    margin-bottom: 191px;
+   @media (max-width: ($mobile)) {
+      margin-bottom: 81px;
+   }
    &__text {
       color: #424242;
       margin-right: 15px;

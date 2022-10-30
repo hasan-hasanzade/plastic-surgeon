@@ -9,6 +9,8 @@ var myScrollFunc = function () {
   }
 };
 
+AOS.init();
+
 window.addEventListener("scroll", myScrollFunc);
 
 var rellax = new Rellax(".rellax");
@@ -68,13 +70,16 @@ var swiper = new Swiper(".image-gallery__slider", {
   },
 });
 
-var swiper = new Swiper(".video-gallery__slider", {
+
+
+var videoGallery = new Swiper(".video-gallery__slider", {
   
   scrollbar: {
     dragSize: 80,
     el: ".swiper-scrollbar",
     draggable: true,
   },
+  
   breakpoints: {
     340: {
       slidesPerView: 1,
@@ -118,55 +123,66 @@ var swiper = new Swiper(".video-gallery__slider", {
 
 
 onload = e => {
-  const containers = document.querySelectorAll('.video-gallery__slide');
-  containers.forEach(container => {
-    const video = container.querySelector('.video-gallery__video');
-    const playBtn = container.querySelector('.video-gallery__playbtn');
-    const muteBtn = container.querySelector('.video-gallery__mutebtn');
-    const fullscBtn = container.querySelector(".video-gallery__fullscbtn");
-    playBtn.addEventListener('click', e => {
-      if (video.paused) {
+   const containers = document.querySelectorAll('.video-gallery__slide');
+   containers.forEach((container,index) => {
+     const video = container.querySelector('.video-gallery__video');
+     const playBtn = container.querySelector('.video-gallery__playbtn');
+     const muteBtn = container.querySelector('.video-gallery__mutebtn');
+     const fullscBtn = container.querySelector(".video-gallery__fullscbtn");
+     const active = container.querySelector(".video-gallery__btns");
+     playBtn.addEventListener('click', e => {
+       if (video.paused) {
             playBtn.className = "pause";
-           video.play();
-        } else {
-          playBtn.className = "play";
-          video.pause();
-         }
-    })
-    playBtn.forEach((e,index) => {
-      e.addEventListener('click',function(){
-        video[index].play();
-        stopVideo(index)
-      })
-    });
-
-    function stopVideo(id) {
-      video.forEach((e,index) => {
-        if(id !== index) {
-          video[index].pause();
-        }
-      })
-    }
-
-    video.addEventListener("timeupdate", e => {
-      if (video.ended) {
-        playBtn.className = "play";
-      }
-    }) 
-    muteBtn.addEventListener('click', e => {
-      video.muted = !video.muted;
-    })
-    fullscBtn.addEventListener("click", e => {
-      if (video.requestFullscreen) {
-        video.requestFullscreen();
-      } else if (video.webkitRequestFullscreen) {
-        fullscBtn.webkitRequestFullscreen();
-      } else if (video.msRequestFullscreen) {
-        video.msRequestFullscreen();
-      }
-    });
-  })
-}
+            video.play();
+            stopVideoAll(index)
+            active.classList.add('on')
+            video.classList.add('opacity')
+         } else {
+           playBtn.className = "play";
+           video.pause();
+           active.classList.remove('on')
+           video.classList.remove('opacity')
+          }
+     })
+     video.addEventListener("timeupdate", e => {
+       if (video.ended) {
+         playBtn.className = "play";
+         active.classList.remove('on');
+         video.classList.remove('opacity');
+         video.currentTime = 0;
+       }
+     }) 
+     muteBtn.addEventListener('click', e => {
+       video.muted = !video.muted;
+       if(video.muted) {
+        muteBtn.classList.add("muted");
+       }else {
+        muteBtn.classList.remove("muted");
+       }
+     })
+     fullscBtn.addEventListener("click", e => {
+       if (video.requestFullscreen) {
+         video.requestFullscreen();
+       } else if (video.webkitRequestFullscreen) {
+         fullscBtn.webkitRequestFullscreen();
+       } else if (video.msRequestFullscreen) {
+         video.msRequestFullscreen();
+       }
+     })
+   
+       function stopVideoAll(id) {
+          containers.forEach((container, index) => {
+          const video = container.querySelector('.video-gallery__video');
+          const active = container.querySelector(".video-gallery__btns");
+              if (id !== index) {
+                  video.pause();
+                  active.classList.remove('on');
+                  video.classList.remove('opacity');
+              }
+          })
+       }      
+   })
+ }
 
 
 function setupTabs() {
@@ -181,6 +197,11 @@ function setupTabs() {
 
       sideBar.querySelectorAll(".services__designation").forEach((button) => {
         button.classList.remove("services__designation-active");
+        if (window.matchMedia("(max-width: 767px)").matches) {
+          button.scrollIntoView({behavior: "smooth"});
+        }
+        
+        
       });
       tabsContainer.querySelectorAll(".services__operations").forEach((tab) => {
         tab.classList.remove("services__operations-active");
@@ -251,7 +272,7 @@ document.addEventListener('DOMContentLoaded',function(){
             icon: 'error',
             title: 'Ошибка...',
             text: 'Что-то пошло не так',
-            width: '22em',
+            width: '18em',
           })
         })
         .finally(() => {
@@ -260,7 +281,7 @@ document.addEventListener('DOMContentLoaded',function(){
             title: 'Заявка отправлена',
             showConfirmButton: false,
             timer: 2500,
-            width: '22em',
+            width: '18em',
             timerProgressBar: true,
             color: '#fff',
             confirmButtonColor: '#6398FF',
@@ -273,7 +294,7 @@ document.addEventListener('DOMContentLoaded',function(){
             icon: 'error',
             title: 'Ошибка...',
             text: 'Заполните обязательные поля',
-            width: '22em',
+            width: '18em',
             color: '#fff',
             confirmButtonColor: '#6398FF',
             background: '#141414',

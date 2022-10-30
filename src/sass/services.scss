@@ -51,13 +51,20 @@
       line-height: math.div(48, 40);
       letter-spacing: 2px;
       margin-bottom: 30px;
+      @media (max-width: em(518)) {
+         font-size: 35px;
+      }
       @media (max-width: ($mobileSmall)) {
          font-size: 30px;
          line-height: math.div(40, 30);
       }
+      @media (max-width: em(404)) {
+         font-size: 23px;
+      }
    }
    &__item {
       list-style: disc;
+      margin-left: 10px;
       font-weight: 500;
       font-size: 20px;
       line-height: math.div(30, 20);

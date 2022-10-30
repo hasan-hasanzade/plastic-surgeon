@@ -1,5 +1,6 @@
 .video-gallery {
    margin-bottom: 150px;
+
    &__slider {
       
    }
@@ -11,9 +12,11 @@
       @media (max-width: em(440)) {
          text-align: center;
       }
+      
    }
 
    &__video {
+      opacity: .5;
       width: 490px;
       height: 490px;
       @media (max-width: ($tablet)) {
@@ -27,6 +30,10 @@
       @media (max-width: ($mobileSmall)) {
          width: 300px;
          height: 300px;
+      }
+      transition: all .5s ease ;
+      &.opacity {
+         opacity: 1;
       }
    }
 
@@ -47,6 +54,16 @@
       }
    }
 
+   &__btns {
+      visibility: hidden;
+      transition: all .5s ease ;
+      opacity: 0;
+      &.on {
+         opacity: 1;
+         visibility: visible;
+      }
+   }
+
    &__buttons {
       width: 380px;
       display: flex;
@@ -64,6 +81,7 @@
    }
 
    &__playbtn {
+     
       cursor: pointer;
       &::before {
          content: url("../video/play.png");
@@ -72,13 +90,13 @@
          display: grid;
          align-items: center;
          border-radius: 50%;
-         transition: all 2s linear 3s;
          animation: pulse 2s infinite ;
       }
      
    }
  
    &__mutebtn {
+      position: relative;
       margin-right: 32px;
       cursor: pointer;
       &::before {
@@ -90,6 +108,16 @@
       }
       @media (max-width: ($mobileSmall)) {
          margin-right: 10px;
+      }
+      &.muted {
+         opacity: .5;
+      }
+      &.muted .slash {
+         opacity: 1;
+         &.slash {
+            display: block;
+         }
+         
       }
     }
    
@@ -135,6 +163,17 @@
    }
 
 }
+
+.slash {
+   position: absolute;
+   width: 2px;
+   height: 130%;
+   top: -5px;
+   left: 13px;
+   background: #fff;
+   transform: rotate(-50deg);
+   display: none;
+}
 .play::before {
    content: url("../video/play.png");
    background: $mainBlue;
@@ -143,6 +182,7 @@
    align-items: center;
    border-radius: 50%;
    animation: pulse 2s infinite ;
+   
    
 }
 .pause::before {
@@ -153,5 +193,6 @@
    align-items: center;
    border-radius: 50%;
    animation: pulse2 2s infinite ;
+   transition: content .5s ease;
 
 }

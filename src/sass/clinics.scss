@@ -15,7 +15,7 @@
          line-height: math.div(65, 54);
          letter-spacing: 3px;
       }
-      @media (max-width: em(1024)) {
+      @media (max-width: em(1058)) {
          font-size: 40px;
          line-height: math.div(48, 40);
       }
@@ -27,6 +27,7 @@
    }
    &__body {
       display: flex;
+      justify-content: space-between;
       @media (max-width: em(820)) {
          flex-wrap: wrap;;
       }
@@ -41,7 +42,7 @@
          font-size: 35px;
          line-height: math.div(40, 35);
       }
-      @media (max-width: em(1024)) {
+      @media (max-width: em(1058)) {
          font-size: 30px;
          line-height: math.div(36, 30);
       }
@@ -52,10 +53,11 @@
    }
    &__content {
       @media (max-width: em(1215)) {
-         width: 600px;
-      }
-      @media (max-width: em(1024)) {
          width: 500px;
+         
+      }
+      @media (max-width: em(1058)) {
+         width: 400px;
          &:not(:last-child) {
             margin-right: 5px!important;
          }
@@ -74,10 +76,10 @@
    &__padding{
       padding-bottom: 49px;
       @media (max-width: em(1215)) {
-         padding-bottom: 40px;
+         padding-bottom: 15px;
       }
-      @media (max-width: em(1024)) {
-         padding-bottom: 10px;
+      @media (max-width: em(1058)) {
+         padding-bottom: 46px;
       }
       @media (max-width: em(820)) {
          padding-bottom: 0px;
@@ -107,6 +109,15 @@
           width: 100%;
           height: 335px!important;
           margin-left: 0!important;
+      }
+      @media (max-width: em(1058)) {
+         height: 285px!important;
+      }
+      @media (max-width: em(820)) {
+         height: 480px!important;
+      }
+      @media (max-width: em(674)) {
+         height: 350px!important;
       }
       @media (max-width: em(480)) {
          height: 250px!important;
@@ -143,8 +154,26 @@
          padding-bottom: 60%;
          width: 81px;
       }
-      @media (max-width: em(1024)) {
-         width: 61px;
+      @media (max-width: em(1058)) {
+         padding-bottom: 80%;
+         width: 79px;
+      }
+      @media (max-width: em(820)) {
+         width: 145px;
+         padding-bottom: 60%;
+      }
+      @media (max-width: em(766)) {
+         width: 115px;
+       
+      }
+      @media (max-width: em(532)) {
+         width: 85px;
+      }
+      @media (max-width: em(464)) {
+         width: 65px;
+      }
+      @media (max-width: em(375)) {
+         width: 55px;
       }
       img{
          object-fit: cover;
@@ -194,12 +223,21 @@
       width: 100%!important;
       height: 335px!important;
   }
+  @media (max-width: em(1058)) {
+   height: 285px!important;
+   }
+   @media (max-width: em(820)) {
+      height: 480px!important;
+   }
+   @media (max-width: em(674)) {
+      height: 350px!important;
+   }
   @media (max-width: em(480)) {
-   height: 250px!important;
-}
-@media (max-width: em(370)) {
-   height: 200px!important;
-}
+      height: 250px!important;
+   }
+   @media (max-width: em(370)) {
+      height: 200px!important;
+   }
 
 }
 .iphk__mini-slide {
@@ -220,8 +258,26 @@
          padding-bottom: 60%;
          width: 81px;
       }
-      @media (max-width: em(1024)) {
-         width: 61px;
+      @media (max-width: em(1058)) {
+         padding-bottom: 80%;
+         width: 79px;
+      }
+      @media (max-width: em(820)) {
+         width: 145px;
+         padding-bottom: 60%;
+      }
+      @media (max-width: em(766)) {
+         width: 115px;
+       
+      }
+      @media (max-width: em(532)) {
+         width: 85px;
+      }
+      @media (max-width: em(464)) {
+         width: 65px;
+      }
+      @media (max-width: em(375)) {
+         width: 55px;
       }
    img{
       object-fit: cover;
